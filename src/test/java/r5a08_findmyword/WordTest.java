@@ -21,4 +21,18 @@ public class WordTest {
         assertEquals(Actual,Expected);
     }
 
+    @Test
+    public void should_check_one_correct_letter(){
+        Word word = new Word("E");
+
+        // Act
+        Score score = word.guess("E");
+
+        // Assert
+        Letter Expected = Letter.CORRECT ;
+        Letter Actual = score.letter(0);
+
+        assertEquals(Actual,Expected);
+    }
+
 }
