@@ -18,7 +18,7 @@ public class WordTest {
         Letter Expected = Letter.INCORRECT ;
         Letter Actual = score.letter(0);
 
-        assertEquals(Actual,Expected);
+        assertEquals(Expected, Actual);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class WordTest {
         Letter Expected = Letter.CORRECT ;
         Letter Actual = score.letter(0);
 
-        assertEquals(Actual,Expected);
+        assertEquals(Expected, Actual);
     }
 
 }
