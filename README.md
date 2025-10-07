@@ -66,6 +66,8 @@ il faut donc modifier la méthode guess() et la méthode lettre()
 
 
 après modification :
+
+
     public void assess(int index, String attempt) {
         if (word.charAt(index) == attempt.charAt(index)) {
             result = Letter.CORRECT;
