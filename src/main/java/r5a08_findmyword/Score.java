@@ -3,15 +3,18 @@ package r5a08_findmyword;
 public class Score {
     private String word;
     private Letter result;
+    private int index;
+
 
     public Score(){
     }
 
-    public Score(String word){
+    public Score(String word,int index){
         this.word = word;
+        this.index = index;
     }
 
-    public void assess(int index, String attempt) {
+    public void assess(String attempt) {
         if (isCorrectLetter(index, attempt)) {
             result = Letter.CORRECT;
         } else {

@@ -9,12 +9,13 @@ public class Word {
     }
 
     public Score guess(String attempt) {
-        Score score = new Score(word);
+        Score score = new Score(word,0);
 
         /* Calcule le score pour la lettre d'indice 0
            de la tentative
          */
-        score.assess(0, attempt);
+
+        score.assess(attempt);
 
         return score;
     }

@@ -16,10 +16,10 @@ public class WordTest {
         Score score = word.guess("B");
 
         // Assert
-        Assertion(score,0);
+        Assert_Incorrect_Lettre(score,0);
     }
 
-    private void Assertion(Score score , int index) {
+    private void Assert_Incorrect_Lettre(Score score , int index) {
         Letter Expected = Letter.INCORRECT ;
         Letter Actual = score.letter(index);
 
@@ -34,6 +34,10 @@ public class WordTest {
         Score score = word.guess("E");
 
         // Assert
+        Assert_Correct_Letter(score);
+    }
+
+    private static void Assert_Correct_Letter(Score score) {
         Letter Expected = Letter.CORRECT ;
         Letter Actual = score.letter(0);
 
