@@ -18,7 +18,18 @@ public class WordTest {
         Assert_Letter_At_Index(score, 0, Letter.CORRECT);
     }
 
+    @Test
+    public void should_check_two_letters_one_correct_one_correct(){
+        // Arrange
+        Word word = new Word("AB");
 
+        // Act
+        Score score = word.guess("AB");
+
+        // Assert
+        Assert_Letter_At_Index(score, 0, Letter.CORRECT);
+        Assert_Letter_At_Index(score, 1, Letter.CORRECT);
+    }
     @Test
     public void should_check_two_letters_one_correct_one_incorrect(){
         // Arrange
@@ -28,9 +39,36 @@ public class WordTest {
         Score score = word.guess("AY");
 
         // Assert
-        Assert_Letter_At_Index(score, 0, Letter.CORRECT);   // 'A' vs 'A' -> CORRECT
-        Assert_Letter_At_Index(score, 1, Letter.INCORRECT); // 'Z' vs 'Y' -> INCORRECT
+        Assert_Letter_At_Index(score, 0, Letter.CORRECT);
+        Assert_Letter_At_Index(score, 1, Letter.INCORRECT);
     }
+
+    @Test
+    public void should_check_two_letters_one_incorrect_one_correct(){
+        // Arrange
+        Word word = new Word("CB");
+
+        // Act
+        Score score = word.guess("AB");
+
+        // Assert
+        Assert_Letter_At_Index(score, 0, Letter.INCORRECT);
+        Assert_Letter_At_Index(score, 1, Letter.CORRECT);
+    }
+
+    @Test
+    public void should_check_two_letters_one_incorrect_one_incorrect(){
+        // Arrange
+        Word word = new Word("CB");
+
+        // Act
+        Score score = word.guess("AM");
+
+        // Assert
+        Assert_Letter_At_Index(score, 0, Letter.INCORRECT);
+        Assert_Letter_At_Index(score, 1, Letter.INCORRECT);
+    }
+
 
     private void Assert_Letter_At_Index(Score score , int index, Letter expected) {
         Letter actual = score.letter(index);
