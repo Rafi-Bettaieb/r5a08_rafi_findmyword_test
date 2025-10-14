@@ -1,47 +1,39 @@
 package r5a08_findmyword;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WordTest {
     @Test
     public void should_check_one_incorrect_letter(){
-
-        // Arrange
         Word word = new Word("E");
-
-        // Act
         Score score = word.guess("B");
-
-        // Assert
-        Assert_Incorrect_Lettre(score,0);
-    }
-
-    private void Assert_Incorrect_Lettre(Score score , int index) {
-        Letter Expected = Letter.INCORRECT ;
-        Letter Actual = score.letter(index);
-
-        assertEquals(Expected, Actual);
+        Assert_Letter_At_Index(score, 0, Letter.INCORRECT);
     }
 
     @Test
     public void should_check_one_correct_letter(){
         Word word = new Word("E");
+        Score score = word.guess("E");
+        Assert_Letter_At_Index(score, 0, Letter.CORRECT);
+    }
+
+
+    @Test
+    public void should_check_two_letters_one_correct_one_incorrect(){
+        // Arrange
+        Word word = new Word("AZ");
 
         // Act
-        Score score = word.guess("E");
+        Score score = word.guess("AY");
 
         // Assert
-        Assert_Correct_Letter(score);
+        Assert_Letter_At_Index(score, 0, Letter.CORRECT);   // 'A' vs 'A' -> CORRECT
+        Assert_Letter_At_Index(score, 1, Letter.INCORRECT); // 'Z' vs 'Y' -> INCORRECT
     }
 
-    private static void Assert_Correct_Letter(Score score) {
-        Letter Expected = Letter.CORRECT ;
-        Letter Actual = score.letter(0);
-
-        assertEquals(Expected, Actual);
+    private void Assert_Letter_At_Index(Score score , int index, Letter expected) {
+        Letter actual = score.letter(index);
+        assertEquals(expected, actual);
     }
-
 }
