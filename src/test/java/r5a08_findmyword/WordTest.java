@@ -1,5 +1,6 @@
 package r5a08_findmyword;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,8 +16,12 @@ public class WordTest {
         Score score = word.guess("B");
 
         // Assert
+        Assertion(score,0);
+    }
+
+    private void Assertion(Score score , int index) {
         Letter Expected = Letter.INCORRECT ;
-        Letter Actual = score.letter(0);
+        Letter Actual = score.letter(index);
 
         assertEquals(Expected, Actual);
     }

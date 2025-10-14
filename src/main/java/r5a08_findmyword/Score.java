@@ -12,11 +12,15 @@ public class Score {
     }
 
     public void assess(int index, String attempt) {
-        if (word.charAt(index) == attempt.charAt(index)) {
+        if (isCorrectLetter(index, attempt)) {
             result = Letter.CORRECT;
         } else {
             result = Letter.INCORRECT;
         }
+    }
+
+    private boolean isCorrectLetter(int index, String attempt) {
+        return word.charAt(index) == attempt.charAt(index);
     }
 
     public Letter letter(int i) {
