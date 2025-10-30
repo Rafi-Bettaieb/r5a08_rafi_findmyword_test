@@ -108,6 +108,37 @@ public class WordTest {
         Assert_Letter_At_Index(score, 1, Letter.PART_CORRECT);
     }
 
+    @Test
+    public void should_check_more_than_two_letters_with_mixed_results() {
+        // Arrange
+        Word word = new Word("ABC");
+
+        // Act
+        Score score = word.guess("ABB");
+
+        // Assert
+        Assert_Letter_At_Index(score, 0, Letter.CORRECT);
+        Assert_Letter_At_Index(score, 1, Letter.CORRECT);
+        Assert_Letter_At_Index(score, 2, Letter.PART_CORRECT);
+    }
+
+    @Test
+    public void should_check_six_letters_with_mixed_results() {
+        // Arrange
+        Word word = new Word("ABCDEF");
+
+        // Act
+        Score score = word.guess("AEBZXA");
+
+        // Assert
+        Assert_Letter_At_Index(score, 0, Letter.CORRECT);
+        Assert_Letter_At_Index(score, 1, Letter.PART_CORRECT);
+        Assert_Letter_At_Index(score, 2, Letter.PART_CORRECT);
+        Assert_Letter_At_Index(score, 3, Letter.INCORRECT);
+        Assert_Letter_At_Index(score, 4, Letter.INCORRECT);
+        Assert_Letter_At_Index(score, 5, Letter.PART_CORRECT);
+    }
+
 
     private void Assert_Letter_At_Index(Score score , int index, Letter expected) {
         Letter actual = score.letter(index);
