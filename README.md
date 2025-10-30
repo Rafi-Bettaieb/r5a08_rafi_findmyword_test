@@ -99,4 +99,4 @@ Pour le TP4 : Tester sur un mot de deux lettres Red -> Green   et    tester la f
 
 Pour le TP5 : Tester sur un mot de plus de deux lettres (3 lettres et 6 lettres)
 
-Pour le TP6 : Calcul de score et refactorisation du code
+Pour le TP6 : tester deux mots avec longueurs differentes Calcul de score et refactorisation du code
