@@ -95,8 +95,8 @@ maintenant le test passe au vert
 
 Pour le TP3 : Refactorisation
 
-Pour le TP4 : Tester sur un mot de deux lettres Red -> Green   et    tester la fonction de PART_CORRECT
+Pour le TP4 : Tester sur un mot de deux lettres Red -> Green   et    tester la fonction de PART_CORRECT + Refactorisation
 
-Pour le TP5 : Tester sur un mot de plus de deux lettres (3 lettres et 6 lettres) tester deux mots avec longueurs differentes
+Pour le TP5 : Tester sur un mot de plus de deux lettres (3 lettres et 6 lettres) tester deux mots avec longueurs differentes + refactorisation
 
 Pour le TP6 : creation de diagramme de class
